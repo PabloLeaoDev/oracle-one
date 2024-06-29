@@ -1,6 +1,7 @@
 let numSorteados = [];
 let numMax = 10;
 let numSecreto = gerarNumAleatorio(numMax);
+console.log(numSorteados);
 let tentativas = 1;
 
 function exibirTexto(tag, texto) {
@@ -30,17 +31,15 @@ function verificarChute() {
         tentativas++;
         limparCampo();
     }
-    console.log(numSorteados);
 }
 
 function gerarNumAleatorio(num) {
-    let numEscolhido = Math.floor(Math.random() * (num + 1));
-    if (numSorteados.includes(numEscolhido)) {
-        return gerarNumAleatorio(num);
-    } else {
-        numSorteados.push(numEscolhido);
-        return numEscolhido;
-    }
+    let numEscolhido;
+    do {
+        numEscolhido = Math.floor(Math.random() * num + 1);
+    } while (numSorteados.includes(numEscolhido));
+    numSorteados.push(numEscolhido);
+    return numEscolhido;
 }
 
 function limparCampo() {
@@ -49,17 +48,17 @@ function limparCampo() {
 }
 
 function reiniciarJogo() {
+    if (numSorteados.length >= numMax) {
+        limparNumSorteados();
+    }
     numSecreto = gerarNumAleatorio(10);
     tentativas = 1;
+    console.log(numSorteados);
     limparCampo();
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
 }
 
 function limparNumSorteados() {
-    if (numSorteados.length === numMax) {
-        while (numSorteados.length > 0) {
-            numSorteados.pop();
-        }
-    }    
+    numSorteados = [];
 }
