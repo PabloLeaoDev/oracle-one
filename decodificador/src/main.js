@@ -1,67 +1,66 @@
-/*
-"a" === "ai"
-"e" === "enter"
-"i" === "imes"
-"o" === "ober"
-"u" === "ufat"
-*/
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
-const KEYS = ['i', 'nter', 'mes', 'ber', 'fat'];
+const KEYS = ['ai', 'enter', 'imes', 'ober', 'ufat'];
+let index;
 
 function encrypt(phrase) {
     let encryptRes = '';
-    let phraseToArray = phrase.split('');
-    phraseToArray.map((letter) => {
-        switch (letter in VOWELS) {
-            case letter === 'a':
-                encryptRes += 'ai';
-                break;
-            case letter === 'e':
-                encryptRes += 'enter';
-                break;
-            case letter === 'i':
-                encryptRes += 'imes';
-                break;
-            case letter === 'o':
-                encryptRes += 'ober';
-                break;
-            case letter === 'u':
-                encryptRes += 'ufat';
-                break;
+    let phraseArray = phrase.split('');
+    phraseArray.map((letter) => {
+        let isTrue = VOWELS.indexOf(letter) !== -1 ? true:false;
+        if (isTrue) {
+            if (letter === VOWELS[0]) {
+                index = 0;
+            } else if (letter === VOWELS[1]) {
+                index = 1;
+            } else if (letter === VOWELS[2]) {
+                index = 2;
+            } else if (letter === VOWELS[3]) {
+                index = 3;
+            } else if (letter === VOWELS[4]) {
+                index = 4;
+            }
+            encryptRes += KEYS[index];
+        } else {
+            encryptRes += letter;
         }
-        encryptRes += letter;
     })
     return encryptRes;
 }
 
 function descrypt(phrase) {
     let count = 0;
-    let vwIndex = 0; 
     let phraseArray = phrase.split('');
 
     phraseArray.map((letter) => {
         let isTrue = VOWELS.indexOf(letter) !== -1 ? true:false;
         if (isTrue) {
-            let count1 = 0;
-
-            while (letter !== VOWELS[count1]) {
-                count1++;
+            // o "+ 1" é para fazer o "splice" começar a remover os elementos depois da vogal que estará na frase descriptografada
+            let spliceStart = phraseArray.indexOf(letter, count) + 1;
+            // switch case para definir quantos elementos serão deletados pelo ".splice"
+            switch (true) {
+                case letter === VOWELS[0]:
+                    index = 0;
+                    break;
+                case letter === VOWELS[1]:
+                    index = 1;
+                    break;
+                case letter === VOWELS[2]:
+                    index = 2;
+                    break;
+                case letter === VOWELS[3]:
+                    index = 3;
+                    break;
+                case letter === VOWELS[4]:
+                    index = 4;
+                    break;
             }
+            // o "- 1" é para não remover o elemento que faz parte da frase descriptografada, haja vista que todas as chaves começam com a respectiva vogal
+            let spliceEnd = KEYS[index].length - 1;
 
-            vwIndex = VOWELS.indexOf(VOWELS[count1]);
-
-            // variável para encontrar o index que irá abrir o método ".slice"
-            let firstSlice = phraseArray.indexOf(letter, count);
-            
-            // variável para encontrar o index que irá fechar o método ".slice"
-            let lastSlice = phraseArray.indexOf(letter, count) + KEYS[vwIndex].length + 1;
-
-            // método ".slice" para retirar os acréscimos da criptografia
-            phraseArray.slice(firstSlice, lastSlice);
+            // método ".splice" para retirar os acréscimos da criptografia
+            phraseArray.splice(spliceStart, spliceEnd);
         }
         count++;
     })
     return phraseArray.join('');
 }
-
-console.log(descrypt("pairaibenterns poberr enterncairair enterssenter dentersaifimesober enter tenterr fimesnailimeszaidober enterlenter coberm sufatcenterssober!"));
