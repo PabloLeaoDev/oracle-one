@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/global.css">
 </head>
 <body>
     <header>
-        <nav><a href="" class="logo"><img src="" alt=""></a></nav>
+        <nav><a href="" class="logo"><img src="assets/images/logo-alura.svg" alt=""></a></nav>
     </header>
     <main>
         <section class="in">
             <input type="text" placeholder="Digite seu texto">
-            <p><img src="" alt="">Apenas letras minúsculas e sem acento.</p>
+            <p><img src="assets/images/bi_exclamation-circle-fill.svg" alt="">Apenas letras minúsculas e sem acento.</p>
             <div>
                 <button onclick="encrypt()">Criptografar</button>
                 <button onclick="decrypt()">Descriptografar</button>
             </div>
         </section>
         <section class="out">
-            <img src="" alt="">
+            <img src="assets/images/person.svg" alt="" class="out_img">
             <div>
                 <h1>Nenhuma mensagem encontrada</h1>
                 <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
@@ -30,5 +34,7 @@
 
     </footer>
     <script src="src/main.js"></script>
+    <script src="src/encrypt.js"></script>
+    <script src="src/descrypt.js"></script>
 </body>
 </html>

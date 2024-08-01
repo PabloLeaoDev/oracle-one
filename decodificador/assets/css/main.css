@@ -1,0 +1,37 @@
+:root {
+    --primary-color: #0A3871;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    height: 7%;
+    padding: 2rem;
+}
+
+main {
+    height: 93%;
+}
+
+.in {
+    height: 50%;
+    padding: 2rem;
+}
+
+.in input {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.in input::placeholder {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.out_img {
+    display: none;
+}
