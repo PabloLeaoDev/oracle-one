@@ -1,5 +1,14 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Yuji+Mai&display=swap');
+}
+
 :root {
     --primary-color: #0A3871;
+}
+
+* {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 html, body {
@@ -9,7 +18,7 @@ html, body {
 
 header {
     height: 7%;
-    padding: 2rem;
+    padding: 2rem 0 0 2rem;
 }
 
 main {
@@ -18,18 +27,41 @@ main {
 
 .in {
     height: 50%;
-    padding: 2rem;
+    padding: 2rem 1rem 0 1rem;
 }
 
 .in input {
     border: none;
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 
 .in input::placeholder {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--primary-color);
+    position: relative;
+    top: -35%;
+}
+
+.in div {
+    display: flex;
+    flex-direction: column;
+}
+
+.in div button {
+    margin: .5rem 0;
+}
+
+.in div .encrypt {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.in div .descrypt {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .out_img {

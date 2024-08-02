@@ -16,10 +16,13 @@
     <main>
         <section class="in">
             <input type="text" placeholder="Digite seu texto">
-            <p><img src="assets/images/bi_exclamation-circle-fill.svg" alt="">Apenas letras minúsculas e sem acento.</p>
+            <p>
+                <img src="assets/images/bi_exclamation-circle-fill.svg" alt="">
+                Apenas letras minúsculas e sem acento.
+            </p>
             <div>
-                <button onclick="encrypt()">Criptografar</button>
-                <button onclick="decrypt()">Descriptografar</button>
+                <button onclick="encrypt()" class="encrypt">Criptografar</button>
+                <button onclick="descrypt()" class="descrypt">Descriptografar</button>
             </div>
         </section>
         <section class="out">
