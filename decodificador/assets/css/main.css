@@ -4,11 +4,13 @@
 }
 
 :root {
-    --primary-color: #0A3871;
+    --primary-color: #f3f5fc;
+    --secundary-color: #0A3871;
 }
 
 * {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color);
 }
 
 html, body {
@@ -17,18 +19,23 @@ html, body {
 }
 
 header {
-    height: 7%;
-    padding: 2rem 0 0 2rem;
+    height: 6%;
+    padding: 1rem 0 0 1rem;
+    box-sizing: border-box;
+}
+
+header nav, header a, header img  {
+    height: 100%;
 }
 
 main {
-    height: 93%;
+    height: 94%;
+    box-sizing: border-box;
 }
 
-.in, .out {
-    height: 50%;
-    padding: 2rem 1rem 0 1rem;
-    overflow: scroll; /* trocar  */
+.in {
+    height: 65%;
+    margin: 0 1rem;
 }
 
 .in input {
@@ -39,7 +46,7 @@ main {
 
 .in input::placeholder {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--secundary-color);
     position: relative;
     top: -35%;
 }
@@ -64,23 +71,50 @@ main {
 }
 
 .in div .encrypt {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secundary-color);
+    color: var(--primary-color);
     border: none;
 }
 
 .in div .descrypt {
-    background-color: white;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    border: 1px solid var(--secundary-color);
 }
 
 .out {
-    height: 50%;
+    height: 35%;
+    background: linear-gradient(to bottom, var(--primary-color), 30%, #dddfe6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.out div, .out h1, .out p {
+    background-color: white;
 }
 
 .out div {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 25px;
+    height: 165px;
+    margin: 0 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.out h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.out p {
+    color: gray;
 }
 
 .out_img {
