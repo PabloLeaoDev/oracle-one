@@ -3,7 +3,7 @@ function descrypt(phrase) {
     let phraseArray = phrase.split('');
 
     phraseArray.map((letter) => {
-        let isTrue = VOWELS.indexOf(letter) !== -1 ? true:false;
+        let isTrue = VOWELS.indexOf(letter) !== -1 ? true : false;
         if (isTrue) {
             // o "+ 1" é para fazer o "splice" começar a remover os elementos depois da vogal que estará na frase descriptografada
             let spliceStart = phraseArray.indexOf(letter, count) + 1;
@@ -23,6 +23,21 @@ function descrypt(phrase) {
                     break;
                 case letter === VOWELS[4]:
                     index = 4;
+                    break;
+                case letter === VOWELS[5]:
+                    index = 5;
+                    break;
+                case letter === VOWELS[6]:
+                    index = 6;
+                    break;
+                case letter === VOWELS[7]:
+                    index = 7;
+                    break;
+                case letter === VOWELS[8]:
+                    index = 8;
+                    break;
+                case letter === VOWELS[9]:
+                    index = 9;
                     break;
             }
             // o "- 1" é para não remover o elemento que faz parte da frase descriptografada, haja vista que todas as chaves começam com a respectiva vogal
