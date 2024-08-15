@@ -28,7 +28,6 @@ header {
     height: 6%;
     padding: 1rem 0 0 1rem;
     margin-bottom: 3rem;
-    box-sizing: border-box;
 }
 
 header nav,
@@ -39,7 +38,6 @@ header img  {
 
 main {
     height: 94%;
-    box-sizing: border-box;
 }
 
 button:hover {
@@ -55,8 +53,9 @@ button:hover {
 
 .in textarea {
     border: none;
-    width: 90%;
-    height: 70%;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: 70%;
     color: var(--secundary-color);
     font-size: 2rem;
 }
@@ -71,12 +70,15 @@ button:hover {
     align-items: center;
     gap: 5px;
     font-size: smaller;
+    background-color: transparent;
+    margin-top: 1rem;
 }
 
 .in div {
     display: flex;
     flex-direction: column;
     width: 80%;
+    background-color: transparent;
 }
 
 .in div button,
@@ -103,13 +105,13 @@ button:hover {
 
 .out {
     width: 100%;
-    height: 35%;
+    min-height: 35%;
+    padding: 3rem;
     background: linear-gradient(to bottom, var(--primary-color), 30%, #dddfe6);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2.5rem;
-    box-sizing: border-box;
+    margin-top: 5rem;
 }
 
 .out div,
@@ -119,8 +121,9 @@ button:hover {
 }
 
 .out div {
-    width: 80%;
-    height: 165px;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 165px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +131,7 @@ button:hover {
     text-align: center;
     border-radius: 25px;
     padding: 1.7rem;
-    box-sizing: border-box;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .out h1 {

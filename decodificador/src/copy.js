@@ -11,5 +11,5 @@ async function copy() {
         });
         setTimeout(function() {
             btnToCopy.innerText = 'Copiar';
-        }, 3000);
+        }, 2000);
 }
