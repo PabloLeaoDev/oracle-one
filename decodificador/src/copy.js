@@ -1,11 +1,15 @@
 async function copy() {
-    const textToCopy = document.querySelector('#answer-p').value;
+    const btnToCopy = document.querySelector('#copy');
+    const textToCopy = document.querySelector('#answer-p').innerText;
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
-            document.getElementById('copyStatus').innerText = 'Texto copiado!';
+            btnToCopy.innerText = 'Texto copiado!';
         })
         .catch(err => {
             console.error('Erro ao copiar o texto: ', err);
-            document.getElementById('copyStatus').innerText = 'Erro ao copiar!';
+            btnToCopy.innerText = 'Erro ao copiar!';
         });
+        setTimeout(function() {
+            btnToCopy.innerText = 'Copiar';
+        }, 3000);
 }
