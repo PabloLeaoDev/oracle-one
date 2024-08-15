@@ -20,21 +20,6 @@ function encrypt(phrase) {
                 case letter === VOWELS[4]:
                     index = 4;
                     break;
-                case letter === VOWELS[5]:
-                    index = 5;
-                    break;
-                case letter === VOWELS[6]:
-                    index = 6;
-                    break;
-                case letter === VOWELS[7]:
-                    index = 7;
-                    break;
-                case letter === VOWELS[8]:
-                    index = 8;
-                    break;
-                case letter === VOWELS[9]:
-                    index = 9;
-                    break;
             }
             encryptRes += KEYS[index];
         } else {

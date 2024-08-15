@@ -1,10 +1,13 @@
-const VOWELS = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-const KEYS = ['ai', 'enter', 'imes', 'ober', 'ufat', 'AI', 'ENTER', 'IMES', 'OBER', 'UFAT'];
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const KEYS = ['ai', 'enter', 'imes', 'ober', 'ufat'];
 let index;
 
 function encrypter() {
     const removeTxt = document.querySelector('#non-message');
     removeTxt.classList.add('desactive');
+
+    const btnCopy = document.querySelector('#copy');
+    btnCopy.classList.add('active');
 
     const answer = document.querySelector('#answer-p');
     const txt = document.querySelector('#txt');
@@ -16,6 +19,9 @@ function encrypter() {
 function descrypter() {
     const removeTxt = document.querySelector('#non-message');
     removeTxt.classList.add('desactive');
+
+    const btnCopy = document.querySelector('#copy');
+    btnCopy.classList.add('active');
 
     const answer = document.querySelector('#answer-p');
     const txt = document.querySelector('#txt');

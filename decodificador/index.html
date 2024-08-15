@@ -21,8 +21,8 @@
                 Apenas letras minúsculas e sem acento.
             </p>
             <div>
-                <button onclick="encrypter()" class="encrypt">Criptografar</button>
-                <button onclick="descrypter()" class="descrypt">Descriptografar</button>
+                <button class="encrypt" onclick="encrypter()">Criptografar</button>
+                <button class="descrypt" onclick="descrypter()">Descriptografar</button>
             </div>
         </section>
         <section class="out">
@@ -30,11 +30,13 @@
             <div id="answer">
                 <h1 id="non-message">Nenhuma mensagem encontrada</h1>
                 <p id="answer-p">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                <button id="copy" onclick="copy()">Copiar</button>
             </div>
         </section>
     </main>
     <script src="src/main.js"></script>
     <script src="src/encrypt.js"></script>
     <script src="src/descrypt.js"></script>
+    <script src="src/copy.js"></script>
 </body>
 </html>

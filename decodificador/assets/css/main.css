@@ -8,14 +8,20 @@
     --secundary-color: #0A3871;
 }
 
-* {
+*,
+*::before,
+*::after {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
     background-color: var(--primary-color);
 }
 
-html, body {
-    width: 100vw;
-    height: 100vh;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -25,7 +31,9 @@ header {
     box-sizing: border-box;
 }
 
-header nav, header a, header img  {
+header nav,
+header a,
+header img  {
     height: 100%;
 }
 
@@ -34,14 +42,20 @@ main {
     box-sizing: border-box;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .in {
     height: 65%;
-    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .in textarea {
     border: none;
-    width: 100%;
+    width: 90%;
     height: 70%;
     color: var(--secundary-color);
     font-size: 2rem;
@@ -62,13 +76,16 @@ main {
 .in div {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
-.in div button {
+.in div button,
+.out button {
     margin: .5rem 0;
     padding: 25px;
     border-radius: 25px;
     font-size: medium;
+    width: 100%;
 }
 
 .in div .encrypt {
@@ -77,35 +94,40 @@ main {
     border: none;
 }
 
-.in div .descrypt {
+.in div .descrypt,
+.out button {
     background-color: var(--primary-color);
     color: var(--secundary-color);
     border: 1px solid var(--secundary-color);
 }
 
 .out {
+    width: 100%;
     height: 35%;
     background: linear-gradient(to bottom, var(--primary-color), 30%, #dddfe6);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
+    box-sizing: border-box;
 }
 
-.out div, .out h1, .out p {
+.out div,
+.out h1,
+.out p {
     background-color: white;
 }
 
 .out div {
+    width: 80%;
+    height: 165px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
     border-radius: 25px;
-    height: 165px;
-    margin: 0 1rem;
-    padding: 2rem;
+    padding: 1.7rem;
     box-sizing: border-box;
 }
 
@@ -114,14 +136,22 @@ main {
     font-weight: bold;
 }
 
-.out h1.desactive {
-    display: none;
-}
-
 .out p {
     color: gray;
 }
 
 .out_img {
     display: none;
+}
+
+.out button {
+    display: none;
+}
+
+.out h1.desactive {
+    display: none;
+}
+
+.out button.active {
+    display: block;
 }
