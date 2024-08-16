@@ -157,4 +157,12 @@ button:hover {
 
 .out button.active {
     display: block;
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.out p.answer {
+    font-size: 1.5rem;
+    color: var(--secundary-color);
 }
