@@ -16,7 +16,7 @@ public class ExchangeRate {
 		String apiKey = "6d7c9b31f615980f3fbf4ff4";
 		String urlStr = String
 				.format("https://v6.exchangerate-api.com/v6/%s/latest/%s",
-						apiKey, coin.getName());
+						apiKey, coin.getBaseCode());
 		
 		HttpClient client = HttpClient.newHttpClient(); 
 		HttpRequest request = HttpRequest.newBuilder()

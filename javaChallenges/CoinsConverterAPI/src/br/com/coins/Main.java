@@ -65,11 +65,11 @@ public class Main {
 				Rates conversionRates = newAddress.conversion_rates();
 				double conversionRatesToDouble = 0;
 				
-				if (coin1.getName().equalsIgnoreCase("USD")) {
+				if (coin1.getBaseCode().equalsIgnoreCase("USD")) {
 					conversionRatesToDouble = Double.valueOf(conversionRates.USD());
-				} else if (coin1.getName().equalsIgnoreCase("EUR")) {
+				} else if (coin1.getBaseCode().equalsIgnoreCase("EUR")) {
 					conversionRatesToDouble = Double.valueOf(conversionRates.EUR());
-				} else if (coin1.getName().equalsIgnoreCase("BRL")) {
+				} else if (coin1.getBaseCode().equalsIgnoreCase("BRL")) {
 					conversionRatesToDouble = Double.valueOf(conversionRates.BRL());
 				}
 				
@@ -80,8 +80,8 @@ public class Main {
 				
 				System.out.printf("\nThe value %.2f [%s] corresponds to the final value --->>"
 						+ " %.2f [%s]\n\n", 
-						valueForConversion, coin.getName(),
-						convertedValue, coin1.getName());
+						valueForConversion, coin.getBaseCode(),
+						convertedValue, coin1.getBaseCode());
 			}
 		} catch (IOException | InterruptedException e) {
 			System.out.println(e.getMessage());

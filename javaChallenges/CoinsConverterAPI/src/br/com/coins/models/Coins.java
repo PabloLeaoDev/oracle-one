@@ -1,14 +1,14 @@
 package br.com.coins.models;
 
 public abstract class Coins {
-	protected final String name;
+	protected final String baseCode;
 	
-	Coins(String name) {
-		this.name = name;
+	Coins(String baseCode) {
+		this.baseCode = baseCode;
 	}
 
-	public String getName() {
-		return name;
+	public String getBaseCode() {
+		return baseCode;
 	}
 	
 }

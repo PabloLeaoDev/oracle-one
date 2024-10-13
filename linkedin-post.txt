@@ -1,0 +1,40 @@
+Mais uma fase do Programa ONE finalizada. Nessa fase, aprendemos codificar em Java e conceitos essenciais de POO. 
+
+
+
+Para concluir a fase, nos foi proposto um desafio: um programa que faria a conversão de moedas, com os valores atualizados, e entregaria ao usuário final o valor convertido.
+
+
+
+Isso só é possível por meio de uma requisição HTTP à uma API, chamada ExchangeRate-API, a qual retorna um JSON com todos os dados referentes aos valores das moedas em relação ao valor de uma moeda especificada no caminho da URL. Abaixo, um exemplo da documentação da API, para entendermos melhor:
+
+
+
+URL da requisição: "https://v6.exchangerate-api.com/v6/API-KEY/latest/USD"
+
+JSON retornado (valores de 13/10/2024):
+
+{
+
+	[...]
+
+	"base_code": "USD",
+
+	"conversion_rates": {
+
+		"USD": 1,
+
+		"EUR": 0.914300,
+
+		"BRL": 5.579900,
+
+        [...]
+
+	}
+
+}
+
+
+
+Após a resposta da requisição, basta tratar os dados usando a biblioteca GSON (ou outra que faça o mesmo), no caso do Java e adequar tudo as regras de negócio.
+
